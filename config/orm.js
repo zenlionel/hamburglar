@@ -1,14 +1,5 @@
 var connection = require('./connection.js')
 
-function printQuestionMarks(num) {
-    var arr = [];
-
-    for (var i = 0; i < num; i++) {
-        arr.push("?");
-    }
-
-    return arr.toString();
-}
 
 function objToSql(ob) {
     var arr = [];
@@ -32,12 +23,12 @@ var orm = {
     },
     create: function (table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table;
-
+        console.log(vals);
         queryString += " (";
         queryString += cols.toString();
         queryString += ") ";
         queryString += "VALUES (";
-        queryString += printQuestionMarks(vals.length);
+        queryString += vals;
         queryString += ") ";
 
         console.log(queryString);

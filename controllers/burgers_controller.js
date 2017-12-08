@@ -19,10 +19,12 @@ router.get('/burger', function (req, res) {
 });
 
 router.post('/burger/create', function (req, res) {
+   var dude = JSON.parse(req.body.devoured)
+    console.log(dude);
     burger.create([
         'burger_name', 'devoured'
     ], [
-        req.body.burger_name, req.body.devoured
+        req.body.name, req.body.devoured
     ], function (data) {
         res.redirect('/burger');
     });
