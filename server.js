@@ -2,12 +2,12 @@ var express = require('express');
 var methOver = require('method-override');
 var bodyParser = require('body-parser');
 var app = express();
-var port = process.env.port || 8080;
+var port = process.env.port || 3000;
 
-app.use(express.static(process.cwd() + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 app.use(bodyParser.urlencoded({
-	extended: false
+    extended: false
 }))
 
 app.use(methOver('_method'));
@@ -24,5 +24,4 @@ app.use('/', routes);
 
 
 app.listen(port);
-console.log('Listening on port: '+ port)
-
+console.log('Listening on port: ' + port)
