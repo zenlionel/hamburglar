@@ -1,0 +1,56 @@
+<h1>burger burgler<h1>
+
+<h2>Burger that exist!</h2>
+<h2>We getting existential here o.0</h2>
+<ul>
+ {{#each burger}}
+    {{#unless this.devoured}}
+      <li>
+        {{this.name}}
+
+        <form action="burger/update/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="devoured" value="true">
+          <button type="submit">DEVOUR!</button>
+        </form>
+
+        {{> burger/delete-burger}}
+      </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Burger that no longer exist !</h2>
+
+<ul>
+ {{#each burger}}
+    {{#unless this.devoured}}
+      <li>
+        {{this.name}}
+
+        <form action="burger/update/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="devoured" value="false">
+          <button type="submit">Burgle the burger!</button>
+        </form>
+
+        {{> burger/delete-burger}}
+      </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+<form class="create-update-form" action='burger/create' method='POST'>
+
+  <div class="form-group">
+    <label for="ca">Burger Name:</label>
+    <input type="text" id="ca" name="burger_name">
+  </div>
+
+  <div class="form-group">
+    <label for="devour">Hungry?</label><br>
+    <input type="radio" name="Devoured" value="1" checked> Gone!NOMNOM<br>
+    <input type="radio" name="Devoured" value="0"> Exists!
+  </div>
+
+  <button type="submit">add a burger to be burgled</button>
+</form>

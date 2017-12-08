@@ -1,0 +1,15 @@
+{
+  "name": "hamburglar",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:zenlionel/hamburglar.git",
+  "author": "Leo <zenlionel@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.10",
+    "mysql": "^2.15.0"
+  }
+}
