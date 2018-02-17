@@ -1,6 +1,6 @@
 #Hamburglar!
 ----
-A Burger Eatin' Application With Node.js/Express/MySQL/Handlebars/Materialize
+A Burger Eatin' Application With Node.js/Express/MySQL/Handlebars
 
 Description
 -----
