@@ -7,9 +7,13 @@ var connection = mysql.createConnection({
     database: 'burgers_db'
 });
 
-connection.connect(function (err) {
-    if (err) throw err;
+connection.connect(function(err) {
+    if (err) {
+      console.error("error connecting: " + err.stack);
+      return;
+    }
     console.log("connected as id " + connection.threadId);
-});
-
-module.exports = connection;
+  });
+  
+  module.exports = connection;
+  
